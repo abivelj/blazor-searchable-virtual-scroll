@@ -1,3 +1,5 @@
+[![NuGet version (BlazorSearchableVirtualScroll)](https://img.shields.io/nuget/v/BlazorSearchableVirtualScroll.svg)](https://www.nuget.org/packages/BlazorSearchableVirtualScroll/)
+
 # blazor-searchable-virtual-scroll
 
 A searchable virtual scroll component
