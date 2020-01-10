@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright></Copyright>
+    <PackageProjectUrl>https://github.com/abivelj/blazor-searchable-virtual-scroll</PackageProjectUrl>
+    <Company>Webenology, Inc</Company>
+    <Authors>Sehab Veljacic</Authors>
+    <RepositoryUrl>https://github.com/abivelj/blazor-searchable-virtual-scroll</RepositoryUrl>
+    <PackageTags>Blazor, Virtual Scroll</PackageTags>
   </PropertyGroup>
 
 
