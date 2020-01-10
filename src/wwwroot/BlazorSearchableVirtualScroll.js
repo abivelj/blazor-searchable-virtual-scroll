@@ -8,7 +8,6 @@ window.blazorSearchableVirtualScroll = {
             var path = e.path;
             var hide = true;
             for (var i = 0; i < path.length; i++) {
-                this.console.log(path[i], element, path[i] === element);
                 if (path[i] === element)
                     hide = false;
             }
