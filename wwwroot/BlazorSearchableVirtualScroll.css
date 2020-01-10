@@ -1,0 +1,67 @@
+.v-autocomplete {
+  box-sizing: border-box;
+  position: relative;
+}
+.v-autocomplete .v-input-group {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.v-autocomplete .v-input-group .v-input {
+  border-radius: 6px;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+.v-autocomplete .v-input-group .v-input:focus {
+  border-color: #aaa;
+}
+.v-autocomplete .v-input-group .v-search {
+  position: absolute;
+  right: 10px;
+  color: #dedede;
+}
+.v-autocomplete .v-list-group {
+  top: 32px;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  overflow: hidden;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+  display: none;
+  overflow-y: scroll;
+  background-color: white;
+}
+.v-autocomplete .v-list-group.show {
+  display: inherit;
+}
+.v-autocomplete .v-list-group .v-line {
+  border-top: 1px solid #efefef;
+  height: 1px;
+  width: 100%;
+}
+.v-autocomplete .v-list-group .v-list-group-item {
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+}
+.v-autocomplete .v-list-group .v-list-group-item:hover {
+  background-color: #e6e6e6;
+}
+.v-autocomplete .v-list-group .v-list-group-item:last-child {
+  border-bottom: none;
+}
+.v-autocomplete .v-list-group .v-loading {
+  padding: 6px;
+  background-color: white;
+}
+.v-autocomplete .v-list-group .v-loading-text {
+  color: #ccc;
+}

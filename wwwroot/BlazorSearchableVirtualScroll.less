@@ -1,0 +1,79 @@
+﻿v-autocomplete {
+    box-sizing: border-box;
+    position: relative;
+
+    .v-input-group {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        .v-input {
+            border-radius: 6px;
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ddd;
+            outline: none;
+
+            &:focus {
+                border-color: #aaa;
+            }
+        }
+
+        .v-search {
+            position: absolute;
+            right: 10px;
+            color: #dedede;
+        }
+    }
+
+    .v-list-group {
+        top: 32px;
+        position: absolute;
+        width: 100%;
+        border: 1px solid #aaa;
+        border-radius: 6px;
+        overflow: hidden;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: none;
+        display: none;
+        overflow-y: scroll;
+        background-color: white;
+
+        &.show {
+            display: inherit;
+        }
+
+        .v-line {
+            border-top: 1px solid #efefef;
+            height: 1px;
+            width: 100%;
+        }
+
+        .v-list-group-item {
+            padding: 6px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            background-color: white;
+            position: absolute;
+            width: 100%;
+
+            &:hover {
+                background-color: darken(white, 10%);
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .v-loading {
+            padding: 6px;
+            background-color: white;
+        }
+
+        .v-loading-text {
+            color: #ccc;
+        }
+    }
+}

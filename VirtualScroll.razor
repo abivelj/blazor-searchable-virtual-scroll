@@ -1,0 +1,25 @@
+@typeparam TItem
+@inherits VirtualScrollBase<TItem>
+
+<div @ref="ElemRef" class="v-list-group @(IsOpen ? "show" : "")" style="height: @(TotalVisibleHeight)px" @onscroll="OnScrollEvent">
+    <div class="v-line"></div>
+    <div style="height: @(TotalHeight)px">
+        @if (IsLoading)
+        {
+            <div class="v-loading"><div class="v-loading-text">Loading...</div></div>
+        }
+        else
+        {
+            @foreach (var itm in Items.Skip(ItemsToSkip).Take(ItemsToTake).Select((x, i) => new { x, i }))
+            {
+                <div class="v-list-group-item" style="top: @((itm.i + ItemsToSkip) * ItemHeight)px" @onclick="@(()=> HandleClick(itm.x))">
+                    <HighlightedItem Value="@itm.x.SearchableString" HighlightValue="@SearchString" />
+                </div>
+            }
+            @if (Items.Count() == 0)
+            {
+                <div class="v-loading"><div class="v-loading-text">No Items to Display</div></div>
+            }
+        }
+    </div>
+</div>
