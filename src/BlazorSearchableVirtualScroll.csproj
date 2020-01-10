@@ -14,9 +14,9 @@
     <Product>Blazor Searchable Virtual Scroll</Product>
     <NeutralLanguage />
     <PackageReleaseNotes>Changed the way onclick works and added outside click.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <FileVersion>1.0.0.2</FileVersion>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 
