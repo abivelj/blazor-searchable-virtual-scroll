@@ -1,14 +1,14 @@
 ﻿@typeparam TItem
 @inherits VirtualSearchBase<TItem>
 
-<div class="v-autocomplete">
+<div class="v-autocomplete" @ref="AutoCompleteRef">
     <div class="v-input-group">
-        <input type="text" class="v-input"
-               @onclick="@(()=> IsOpen=true)" @onblur="OnClose" autocomplete="off"
+        <input type="text" class="v-input" placeholder="@Placeholder"
+               @onclick="@(()=> IsOpen=true)" autocomplete="off"
                @bind="SearchString" @bind:event="oninput" @onkeyup="HandleKeyUp" />
         <i class="fas fa-search v-search"></i>
     </div>
     <VirtualScroll IsOpen="IsOpen || OverrideOpen" ItemHeight="ItemHeight" SearchString="@SearchString"
-                   ItemsToShow="ItemsToShow" TItem="TItem" OnClick="OnClick"
+                   ItemsToShow="ItemsToShow" TItem="TItem" OnClick="OnInnerClick"
                    ItemsToPreRender="ItemsToPreRender" Items="FilteredItems" IsLoading="IsLoading" />
 </div>

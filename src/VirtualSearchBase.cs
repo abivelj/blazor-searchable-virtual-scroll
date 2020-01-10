@@ -4,11 +4,14 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 
 namespace BlazorSearchableVirtualScroll
 {
     public class VirtualSearchBase<TItem> : ComponentBase
     {
+        public ElementReference AutoCompleteRef { get; set; }
         public bool IsOpen = false;
         public bool IsLoading = true;
         public string SearchString { get; set; }
@@ -35,6 +38,9 @@ namespace BlazorSearchableVirtualScroll
         public bool OverrideOpen { get; set; }
 
         [Parameter]
+        public string Placeholder { get; set; }
+
+        [Parameter]
         public List<VirtualItem<TItem>> Items { get; set; }
 
         [Parameter]
@@ -49,17 +55,39 @@ namespace BlazorSearchableVirtualScroll
         [Parameter]
         public EventCallback<VirtualItem<TItem>> OnClick { get; set; }
 
-        public void HandleKeyUp()
+        [Inject]
+        public IJSRuntime Jsr { get; set; }
+
+        public void HandleKeyUp(KeyboardEventArgs keys)
         {
+            IsOpen = keys.Key != "Escape";
             _timer.Stop();
             _timer.Start();
         }
 
-        public async Task OnClose()
+        public void OnInnerClick(VirtualItem<TItem> item)
         {
-            await Task.Delay(100);
+            SearchString = item.SearchableString;
+            OnClick.InvokeAsync(item);
             IsOpen = false;
             StateHasChanged();
+        }
+
+        [JSInvokable]
+        public void OnCloseVirtualScroll()
+        {
+            if (!IsOpen) return;
+            IsOpen = false;
+            StateHasChanged();
+        }
+
+        protected override void OnAfterRender(bool firstRender)
+        {
+            if (firstRender)
+            {
+                BlazorSearchableVirtualScrollJs.SetupOutsideClick(Jsr, AutoCompleteRef, DotNetObjectReference.Create(this));
+            }
+            base.OnAfterRender(firstRender);
         }
 
         protected override void OnParametersSet()

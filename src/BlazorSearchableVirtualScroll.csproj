@@ -4,12 +4,19 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Copyright></Copyright>
+    <Copyright>2020 Webenology, Inc</Copyright>
     <PackageProjectUrl>https://github.com/abivelj/blazor-searchable-virtual-scroll</PackageProjectUrl>
     <Company>Webenology, Inc</Company>
     <Authors>Sehab Veljacic</Authors>
     <RepositoryUrl>https://github.com/abivelj/blazor-searchable-virtual-scroll</RepositoryUrl>
     <PackageTags>Blazor, Virtual Scroll</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Product>Blazor Searchable Virtual Scroll</Product>
+    <NeutralLanguage />
+    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 
