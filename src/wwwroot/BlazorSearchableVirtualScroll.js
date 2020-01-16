@@ -4,7 +4,6 @@ window.blazorSearchableVirtualScroll = {
     },
     setupOnOutsideClick: function (element, instance) {
         window.addEventListener("click", function (e) {
-            console.log(element, instance, e);
             var path = e.path;
             var hide = true;
             for (var i = 0; i < path.length; i++) {

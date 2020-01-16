@@ -12,8 +12,8 @@ namespace BlazorSearchableVirtualScroll
     public class VirtualSearchBase<TItem> : ComponentBase
     {
         public ElementReference AutoCompleteRef { get; set; }
-        public bool IsOpen = false;
         public bool IsLoading = true;
+        public bool IsOpen = false;
         public string SearchString { get; set; }
 
         private System.Timers.Timer _timer;
@@ -34,11 +34,17 @@ namespace BlazorSearchableVirtualScroll
             });
         }
 
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> Attributes { get; set; }
+
         [Parameter]
         public bool OverrideOpen { get; set; }
 
         [Parameter]
         public string Placeholder { get; set; }
+
+        [Parameter]
+        public string DefaultSearch { get; set; }
 
         [Parameter]
         public List<VirtualItem<TItem>> Items { get; set; }
@@ -60,7 +66,11 @@ namespace BlazorSearchableVirtualScroll
 
         public void HandleKeyUp(KeyboardEventArgs keys)
         {
-            IsOpen = keys.Key != "Escape";
+            if (keys.Key == "Escape")
+            {
+                IsOpen = false;
+                OnClick.InvokeAsync(null);
+            }
             _timer.Stop();
             _timer.Start();
         }
@@ -78,6 +88,7 @@ namespace BlazorSearchableVirtualScroll
         {
             if (!IsOpen) return;
             IsOpen = false;
+            OnClick.InvokeAsync(null);
             StateHasChanged();
         }
 
@@ -93,6 +104,9 @@ namespace BlazorSearchableVirtualScroll
         protected override void OnParametersSet()
         {
             IsLoading = false;
+            if (!string.IsNullOrEmpty(DefaultSearch))
+                SearchString = DefaultSearch;
+
             DoFilter();
             base.OnParametersSet();
         }

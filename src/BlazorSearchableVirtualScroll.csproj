@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Copyright>2020 Webenology, Inc</Copyright>
     <PackageProjectUrl>https://github.com/abivelj/blazor-searchable-virtual-scroll</PackageProjectUrl>
     <Company>Webenology, Inc</Company>
@@ -13,10 +13,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Product>Blazor Searchable Virtual Scroll</Product>
     <NeutralLanguage />
-    <PackageReleaseNotes>Changed the way onclick works and added outside click.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
-    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Added the ability to have a default search text</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <FileVersion>1.0.0.3</FileVersion>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
 

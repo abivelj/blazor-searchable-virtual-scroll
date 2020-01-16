@@ -1,0 +1,25 @@
+﻿@page "/"
+@using BlazorSearchableVirtualScroll
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<VirtualSearch TItem="string" Items="items" ItemHeight="37" ItemsToPreRender="3" ItemsToShow="8"
+               Placeholder="this is a placeholder" />
+
+
+@code {
+    private List<VirtualItem<string>> items = new List<VirtualItem<string>>();
+
+    protected override void OnInitialized()
+    {
+
+        for (var i = 0; i < 30000; i++)
+        {
+            items.Add(new VirtualItem<string> { Item = i.ToString(), SearchableString = i.ToString() });
+        }
+
+        base.OnInitialized();
+    }
+}

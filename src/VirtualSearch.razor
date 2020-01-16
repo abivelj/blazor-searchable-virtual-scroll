@@ -4,7 +4,7 @@
 <div class="v-autocomplete" @ref="AutoCompleteRef">
     <div class="v-input-group">
         <input type="text" class="v-input" placeholder="@Placeholder"
-               @onclick="@(()=> IsOpen=true)" autocomplete="off"
+               @onclick="@(()=> IsOpen=true)" autocomplete="off" @attributes="@Attributes"
                @bind="SearchString" @bind:event="oninput" @onkeyup="HandleKeyUp" />
         <i class="fas fa-search v-search"></i>
     </div>
