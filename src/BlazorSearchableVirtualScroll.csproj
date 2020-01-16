@@ -14,9 +14,10 @@
     <Product>Blazor Searchable Virtual Scroll</Product>
     <NeutralLanguage />
     <PackageReleaseNotes>Added the ability to have a default search text</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <FileVersion>1.0.0.3</FileVersion>
-    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
+    <Version>1.0.4</Version>
+    <Description>Virtual scroll drop down that you can search.  It allows for large number of items to be loaded into the search.</Description>
   </PropertyGroup>
 
 

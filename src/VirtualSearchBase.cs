@@ -88,7 +88,14 @@ namespace BlazorSearchableVirtualScroll
         {
             if (!IsOpen) return;
             IsOpen = false;
-            OnClick.InvokeAsync(null);
+            if (FilteredItems.Count == 1 && !string.IsNullOrEmpty(SearchString))
+            {
+                OnClick.InvokeAsync(FilteredItems[0]);
+            }
+            else
+            {
+                OnClick.InvokeAsync(null);
+            }
             StateHasChanged();
         }
 

@@ -4,13 +4,23 @@
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+Selected: @selectedItem
 
 <VirtualSearch TItem="string" Items="items" ItemHeight="37" ItemsToPreRender="3" ItemsToShow="8"
-               Placeholder="this is a placeholder" />
+               Placeholder="this is a placeholder" OnClick="OnClick" DefaultSearch="12345" />
 
 
 @code {
     private List<VirtualItem<string>> items = new List<VirtualItem<string>>();
+    private string selectedItem = string.Empty;
+
+    private void OnClick(VirtualItem<string> itm)
+    {
+        if (itm != null)
+            selectedItem = itm.Item;
+        else
+            selectedItem = string.Empty;
+    }
 
     protected override void OnInitialized()
     {
