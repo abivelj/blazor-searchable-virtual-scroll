@@ -34,6 +34,7 @@ Add the component
   ItemsToPreRender="3"
   ItemHeight="37"
   OnClick="OnClick"
+  ClearOnSelection="false"
 />
 ```
 
