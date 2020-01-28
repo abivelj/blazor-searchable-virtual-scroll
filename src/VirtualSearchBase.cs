@@ -14,6 +14,7 @@ namespace BlazorSearchableVirtualScroll
         public ElementReference AutoCompleteRef { get; set; }
         public bool IsLoading = true;
         public bool IsOpen = false;
+
         public string SearchString { get; set; }
 
         private System.Timers.Timer _timer;
@@ -61,6 +62,9 @@ namespace BlazorSearchableVirtualScroll
         [Parameter]
         public EventCallback<VirtualItem<TItem>> OnClick { get; set; }
 
+        [Parameter]
+        public bool ClearOnSelection { get; set; }
+
         [Inject]
         public IJSRuntime Jsr { get; set; }
 
@@ -79,6 +83,9 @@ namespace BlazorSearchableVirtualScroll
         {
             SearchString = item.SearchableString;
             OnClick.InvokeAsync(item);
+            if (ClearOnSelection)
+                SearchString = string.Empty;
+
             IsOpen = false;
             StateHasChanged();
         }
