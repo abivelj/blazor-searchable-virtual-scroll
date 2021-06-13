@@ -1,4 +1,4 @@
-.v-autocomplete {
+﻿.v-autocomplete {
   box-sizing: border-box;
   position: relative;
 }
@@ -53,10 +53,13 @@
   width: 100%;
 }
 .v-autocomplete .v-list-group .v-list-group-item:hover {
-  background-color: #e6e6e6;
+  background-color: #e6e6e6 !important;
 }
 .v-autocomplete .v-list-group .v-list-group-item:last-child {
   border-bottom: none;
+}
+.v-autocomplete .v-list-group .v-list-group-item.v-highlighted {
+  background-color: #f0f0f0;
 }
 .v-autocomplete .v-list-group .v-loading {
   padding: 6px;

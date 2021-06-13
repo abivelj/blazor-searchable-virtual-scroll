@@ -12,7 +12,7 @@
         {
             @foreach (var itm in Items.Skip(ItemsToSkip).Take(ItemsToTake).Select((x, i) => new { x, i }))
             {
-                <div class="v-list-group-item" style="top: @((itm.i + ItemsToSkip) * ItemHeight)px" @onclick="@(()=> HandleClick(itm.x))">
+                <div class="v-list-group-item @(itm.i == 0 ? "v-highlighted": "")" style="top: @((itm.i + ItemsToSkip) * ItemHeight)px" @onclick="@(()=> HandleClick(itm.x))">
                     <HighlightedItem Value="@itm.x.SearchableString" HighlightValue="@SearchString" />
                 </div>
             }

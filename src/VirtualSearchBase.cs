@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
@@ -74,6 +75,12 @@ namespace BlazorSearchableVirtualScroll
             {
                 IsOpen = false;
                 OnClick.InvokeAsync(null);
+            }
+
+            if (keys.Key == "Enter" && FilteredItems.Any())
+            {
+                IsOpen = false;
+                OnClick.InvokeAsync(FilteredItems.First());
             }
             _timer.Stop();
             _timer.Start();

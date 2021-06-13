@@ -1,4 +1,4 @@
-﻿v-autocomplete {
+﻿.v-autocomplete {
     box-sizing: border-box;
     position: relative;
 
@@ -59,11 +59,15 @@
             width: 100%;
 
             &:hover {
-                background-color: darken(white, 10%);
+                background-color: darken(white, 10%) !important;
             }
 
             &:last-child {
                 border-bottom: none;
+            }
+
+            &.v-highlighted {
+                background-color: darken(white, 6%);
             }
         }
 

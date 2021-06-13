@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>2020 Webenology, Inc</Copyright>
     <PackageProjectUrl>https://github.com/abivelj/blazor-searchable-virtual-scroll</PackageProjectUrl>
     <Company>Webenology, Inc</Company>
@@ -14,11 +14,23 @@
     <Product>Blazor Searchable Virtual Scroll</Product>
     <NeutralLanguage />
     <PackageReleaseNotes>Bind text for search string</PackageReleaseNotes>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
-    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
+    <Version>1.0.6</Version>
     <Description>Virtual scroll drop down that you can search.  It allows for large number of items to be loaded into the search.</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
 
 
   <ItemGroup>
